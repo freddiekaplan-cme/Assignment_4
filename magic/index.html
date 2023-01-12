@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./styles/style.css">
+	<style> @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400;1,700&display=swap'); </style>
+	<script src="./scripts/jquery-3.6.2.min.js"></script>
+	<script defer src="./scripts/api-script.js"></script>
+	<title>Magic API</title>
+</head>
+<body>
+	<header>
+		<h1>$50 COMMANDER</h1>
+	</header>
+	<main>
+		<div class="inputs">
+			<div class="search-and-basic-settings">
+				<input type="text" placeholder="Search" id="search-term">
+				<button type="button" id="search-button">Search</button>
+				<div class="box-and-label">
+					<input class ="search-setting" type="checkbox" id="unique-prints" name="unique-prints" value="+unique:prints">
+					<label for="unique-prints">Show all versions</label>
+				</div>
+				<div class="box-and-label">
+					<input class ="search-setting" type="checkbox" id="legendary" name="legendary" value="+t%3Alegendary">
+					<label for="legendary">Legendary</label>
+				</div>
+			</div>
+			<div class="colors-container">
+				<div class="box-and-label">
+					<input class ="search-setting" type="checkbox" id="white" name="white" value="+c%3Aredwhite">
+					<label for="white">White </label>
+				</div>
+				<div class="box-and-label">
+					<input class ="search-setting" type="checkbox" id="blue" name="blue" value="+c%3Ablue">
+					<label for="blue">Blue </label>
+				</div>
+				<div class="box-and-label">
+					<input class ="search-setting" type="checkbox" id="black" name="black" value="+c%3Ablack">
+					<label for="black">Black </label>
+				</div>
+				<div class="box-and-label">
+					<input class ="search-setting" type="checkbox" id="red" name="red" value="+c%3Ared">
+					<label for="red">Red</label>
+				</div>
+				<div class="box-and-label">
+					<input class ="search-setting" type="checkbox" id="green" name="green" value="+c%3Agreen">
+					<label for="green">Green</label>
+				</div>
+				<div class="box-and-label">
+					<input class ="search-setting" type="checkbox" id="colorless" name="colorless" value="+c%3Acolorless">
+					<label for="colorless">Colorless</label>
+				</div>
+			</div>
+		</div>
+		<div id="results"></div>
+		<div class="search-results"></div>
+	</main>
+	<footer>
+		&copy; Freddie Kaplan 2023
+	</footer>
+</body>
+</html>
