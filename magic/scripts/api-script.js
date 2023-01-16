@@ -137,10 +137,15 @@ function magic() {
 	}
 	createResults();
 	
-	//slut fecth
+	//end fecth
 	});
-//slut magic function
+//end magic function
 }
 
-//slut jQuery
+$("#nav").on("click", function() {
+	$(".menu").toggleClass("active");
+});
+
+
+//end jQuery
 })

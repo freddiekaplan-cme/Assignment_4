@@ -5,6 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="stylesheet" href="../../assets/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="../../assets/fontawesome/css/solid.min.css">
 	<style> @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400;1,700&display=swap'); </style>
 	<script src="./scripts/jquery-3.6.2.min.js"></script>
 	<script defer src="./scripts/api-script.js"></script>
@@ -12,8 +14,14 @@
 </head>
 <body>
 	<header>
+		<nav id="nav"><i class="fa-solid fa-bars"></i></nav>
 		<h1 id="title"><span class="coin">🪙 </span>$50 COMMANDER</h1>
 	</header>
+	<div class="menu">
+		<div class="menu-item">Home</div>
+		<div class="menu-item">Help</div>
+		<div class="menu-item">List</div>
+	</div>
 	<main>
 		<div class="inputs">	
 			<div class="search-section">
@@ -24,18 +32,18 @@
 
 			<div class="search-section">
 				<div class="box-and-label">
-					<span class="search-title">Search for:</span>
+					<span class="search-title">Search:</span>
 					<input class="search-setting" type="radio" id="search-oracle" name="oracle-or-name" value="o:" checked="checked">
-					<label class="default active search-oracle-or-name" for="search-oracle">Card text</label>
+					<label class="default active search-oracle-or-name" for="search-oracle">Card Text</label>
 				</div>
 				<div class="box-and-label">
 					<input class="search-setting" type="radio" id="search-name" name="oracle-or-name" value="">
-					<label class="search-oracle-or-name" for="search-name">Name</label>
+					<label class="search-oracle-or-name" for="search-name">Name / Scryfall</label>
 				</div>
 			</div>
 
 			<div class="search-section">
-				<label class="search-title" for="commander-id">Commander Identity</label>
+				<label class="search-title" for="commander-id">Commander Identity:</label>
 				<select name="commander-id" id="commander-id">
 					<option value="">Any</option>
 					<option value="+id%3C=w">⚪</option>
@@ -138,11 +146,11 @@
 				<div class="box-and-label">
 					<span class="search-title">Show:</span>
 					<input class="search-setting" type="radio" id="cheapest" name="cheapest-or-all" value="+cheapest:usd" checked="checked">
-					<label class="default active printings" for="cheapest">Lowest price</label>
+					<label class="default active printings" for="cheapest">Lowest Price</label>
 				</div>
 				<div class="box-and-label">
 					<input class="search-setting" type="radio" id="unique-prints" name="cheapest-or-all" value="+unique:prints">
-					<label class="printings" for="unique-prints">All printings</label>
+					<label class="printings" for="unique-prints">All Printings</label>
 				</div>
 			</div>
 			<div class="search-section">
@@ -166,7 +174,9 @@
 		</div>
 		<div id="results"></div>
 		<div class="search-results"></div>
-		<div id="back-to-top"><a href="#title">^</a></div>
+		<div id="back-to-top"><a href="#title"><i class="fa-solid fa-chevron-up"></i>
+
+		</a></div>
 	</main>
 	<footer>
 		&copy; Freddie Kaplan 2023

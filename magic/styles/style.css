@@ -16,7 +16,7 @@ body {
 	font-size: 16px;
 	height: 100%;	
 	margin: 0;
-	text-align: center;
+	text-align: center; 
 }
 
 * {
@@ -29,8 +29,8 @@ header {
 	    -ms-flex-align: center;
 	        align-items: center;
 	background-color: var(--primary-color);
-	border-radius: 0 0 20vh 20vh;
 	padding: 12px;
+	position: relative;
 	background-image: -webkit-gradient(linear, left top, right top, color-stop(-10%, var(--secondary-color)), color-stop(var(--primary-color)) , color-stop(110%, var(--secondary-color)));
 	background-image: linear-gradient(to right, var(--secondary-color) -10%, var(--primary-color) , var(--secondary-color) 110%);
 	background-size: 100% 100%;
@@ -43,6 +43,8 @@ header {
 	    -ms-flex-pack: center;
 	        justify-content: center;
 	height: 10vh;
+	position: relative;
+	z-index: 20;
 }
 
 h1 {
@@ -59,6 +61,48 @@ h2 {
 .coin {
 	font-style: normal;
 }
+
+#nav {
+	cursor: pointer;
+	left: 24px;
+	position: absolute;
+}
+
+.fa-bars {
+	font-size: 24px;
+}
+
+.menu {
+	/*display: none;*/
+	flex-direction: column;
+	left: 0;
+	position: absolute;
+	top: calc(0px - 10vh - 301px);
+	transition: top	0.5s;
+	width: 200px;
+}
+
+.menu.active {
+	display: flex;
+	top: 10vh;
+}
+
+.menu-item {
+	align-items: center;
+	border: 1px solid #301d04;
+	display: flex;
+	background-color: var(--primary-color);
+	font-size: 24px;
+	height: 100px;
+	justify-content: center;
+	z-index: 10;
+}
+
+.menu-item:hover {
+	background-color: var(--secondary-color);
+	color: #fff;
+}
+
 
 main {
 	display: -webkit-box;
@@ -162,7 +206,7 @@ input[type=text] {
 	width: 80px;
 }
 
-#back-to-top a:hover,
+.fa-chevron-up a:hover,
 #clear-button:hover,
 #search-button:hover {
 	opacity: 80%;
@@ -310,7 +354,6 @@ img.hidden {
 	font-weight: 700;
 }
 
-
 #back-to-top a,
 #back-to-top a:visited,
 #back-to-top {
@@ -319,7 +362,11 @@ img.hidden {
 	left: /*96.5%;*/ calc(100vw - 24px);
 	position: fixed;
 	text-decoration: none;
-	top: 95%;
+	top: 94%;
+}
+
+.fa-chevron-up {
+	font-size: 16px;
 }
 
 .copyright {
@@ -345,6 +392,10 @@ footer {
 
 @media screen and (max-width: 620px) {
 
+	.menu-item {
+		width: 100vw;
+	}
+	
 	#search-term {
 		width: calc(100% - 20vw - 6px);
 	}
@@ -357,6 +408,7 @@ footer {
 	#back-to-top a,
 	#back-to-top a:visited,
 	#back-to-top {
-		left: 92%;
+		left: 93%;
+		top: 92%;
 	}
 }
