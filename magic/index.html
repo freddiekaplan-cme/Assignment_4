@@ -8,55 +8,165 @@
 	<style> @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400;1,700&display=swap'); </style>
 	<script src="./scripts/jquery-3.6.2.min.js"></script>
 	<script defer src="./scripts/api-script.js"></script>
-	<title>Magic API</title>
+	<title>🪙 $50 Commander</title>
 </head>
 <body>
 	<header>
-		<h1>$50 COMMANDER</h1>
+		<h1 id="title"><span class="coin">🪙 </span>$50 COMMANDER</h1>
 	</header>
 	<main>
-		<div class="inputs">
-			<div class="search-and-basic-settings">
+		<div class="inputs">	
+			<div class="search-section">
 				<input type="text" placeholder="Search" id="search-term">
+				<div id="search-to-string"></div>
 				<button type="button" id="search-button">Search</button>
+			</div>
+
+			<div class="search-section">
 				<div class="box-and-label">
-					<input class ="search-setting" type="checkbox" id="unique-prints" name="unique-prints" value="+unique:prints">
-					<label for="unique-prints">Show all versions</label>
+					<span class="search-title">Search for:</span>
+					<input class="search-setting" type="radio" id="search-oracle" name="oracle-or-name" value="o:" checked="checked">
+					<label class="default active search-oracle-or-name" for="search-oracle">Card text</label>
 				</div>
 				<div class="box-and-label">
-					<input class ="search-setting" type="checkbox" id="legendary" name="legendary" value="+t%3Alegendary">
-					<label for="legendary">Legendary</label>
+					<input class="search-setting" type="radio" id="search-name" name="oracle-or-name" value="">
+					<label class="search-oracle-or-name" for="search-name">Name</label>
 				</div>
 			</div>
-			<div class="colors-container">
+
+			<div class="search-section">
+				<label class="search-title" for="commander-id">Commander Identity</label>
+				<select name="commander-id" id="commander-id">
+					<option value="">Any</option>
+					<option value="+id%3C=w">⚪</option>
+					<option value="+id%3C=u">🔵</option>
+					<option value="+id%3C=b">⚫</option>
+					<option value="+id%3C=r">🔴</option>
+					<option value="+id%3C=g">🟢</option>
+					<option value="+id%3C=wu">⚪🔵</option>
+					<option value="+id%3C=wb">⚪⚫</option>
+					<option value="+id%3C=wr">⚪🔴</option>
+					<option value="+id%3C=wg">⚪🟢</option>
+					<option value="+id%3C=ub">🔵⚫</option>
+					<option value="+id%3C=ur">🔵🔴</option>
+					<option value="+id%3C=ug">🔵🟢</option>
+					<option value="+id%3C=br">⚫🔴</option>
+					<option value="+id%3C=bg">⚫🟢</option>
+					<option value="+id%3C=rg">🔴🟢</option>
+					<option value="+id%3C=wub">⚪🔵⚫</option>
+					<option value="+id%3C=wur">⚪🔵🔴</option>
+					<option value="+id%3C=wug">⚪🔵🟢</option>
+					<option value="+id%3C=ubr">🔵⚫🔴</option>
+					<option value="+id%3C=ubg">🔵⚫🟢</option>
+					<option value="+id%3C=brg">⚫🔴🟢</option>
+					<option value="+id%3C=wubr">⚪🔵⚫🔴</option>
+					<option value="+id%3C=wubg">⚪🔵⚫🟢</option>
+					<option value="+id%3C=wurg">⚪🔵🔴🟢</option>
+					<option value="+id%3C=wurg">⚪⚫🔴🟢</option>
+					<option value="+id%3C=ubrg">🔵⚫🔴🟢</option>
+				</select>
+			</div>
+			<div class="search-section">
 				<div class="box-and-label">
-					<input class ="search-setting" type="checkbox" id="white" name="white" value="+c%3Aredwhite">
-					<label for="white">White </label>
+					<input class="search-setting" type="checkbox" id="commander-legal" name="commander-legal" value="+f%3Acommander" checked="checked">
+					<label class="default active" for="commander-legal">Legal in Commander</label>
 				</div>
 				<div class="box-and-label">
-					<input class ="search-setting" type="checkbox" id="blue" name="blue" value="+c%3Ablue">
-					<label for="blue">Blue </label>
+					<input class="search-setting" type="checkbox" id="legendary" name="legendary" value="+t%3Alegendary">
+					<label for="legendary">Legendary</label>
 				</div>
 				<div class="box-and-label">
-					<input class ="search-setting" type="checkbox" id="black" name="black" value="+c%3Ablack">
-					<label for="black">Black </label>
+					<input class="search-setting" type="checkbox" id="creature" name="creature" value="+t%3Acreature">
+					<label for="creature">Creature</label>
+				</div>
+				<div class="box-and-label">	
+					<input class="search-setting" type="checkbox" id="instant" name="instant" value="+t%3Ainstant">
+					<label for="instant">Instant</label>
 				</div>
 				<div class="box-and-label">
-					<input class ="search-setting" type="checkbox" id="red" name="red" value="+c%3Ared">
-					<label for="red">Red</label>
+					<input class="search-setting" type="checkbox" id="sorcery" name="sorcery" value="+t%3Asorcery">
+					<label for="sorcery">Sorcery</label>
 				</div>
 				<div class="box-and-label">
-					<input class ="search-setting" type="checkbox" id="green" name="green" value="+c%3Agreen">
-					<label for="green">Green</label>
+					<input class="search-setting" type="checkbox" id="enchantment" name="enchantment" value="+t%3Aenchantment">
+					<label for="enchantment">Enchantment</label>
 				</div>
 				<div class="box-and-label">
-					<input class ="search-setting" type="checkbox" id="colorless" name="colorless" value="+c%3Acolorless">
+					<input class="search-setting" type="checkbox" id="aura" name="aura" value="+t%3Aaura">
+					<label for="aura">Aura</label>
+				</div>
+				<div class="box-and-label">
+					<input class="search-setting" type="checkbox" id="planeswalker" name="planeswalker" value="+t%3Aplaneswalker">
+					<label for="planeswalker">Planeswalker</label>
+				</div>
+				<div class="box-and-label">
+					<input class="search-setting" type="checkbox" id="artifact" name="artifact" value="+t%3Aartifact">
+					<label for="artifact">Artifact</label>
+				</div>
+				<div class="box-and-label">
+					<input class="search-setting" type="checkbox" id="land" name="land" value="+t%3Aland">
+					<label for="land">Land</label>
+				</div>
+			</div>
+			<div class="search-section">
+				<div class="box-and-label">
+					<input class="search-setting search-color" type="checkbox" id="white" name="white" value="+c%3Aredwhite">
+					<label class="no-checkbox" for="white">⚪</label>
+				</div>
+				<div class="box-and-label">
+					<input class="search-setting search-color" type="checkbox" id="blue" name="blue" value="+c%3Ablue">
+					<label class="no-checkbox" for="blue">🔵</label>
+				</div>
+				<div class="box-and-label">
+					<input class="search-setting search-color" type="checkbox" id="black" name="black" value="+c%3Ablack">
+					<label class="no-checkbox" for="black">⚫</label>
+				</div>
+				<div class="box-and-label">
+					<input class="search-setting search-color" type="checkbox" id="red" name="red" value="+c%3Ared">
+					<label class="no-checkbox" for="red">🔴</label>
+				</div>
+				<div class="box-and-label">
+					<input class="search-setting search-color" type="checkbox" id="green" name="green" value="+c%3Agreen">
+					<label class="no-checkbox" for="green">🟢</label>
+				</div>
+				<div class="box-and-label">
+					<input class="search-setting" type="checkbox" id="colorless" name="colorless" value="+c%3Acolorless">
 					<label for="colorless">Colorless</label>
 				</div>
+			</div>
+			<div class="search-section">
+				<div class="box-and-label">
+					<span class="search-title">Show:</span>
+					<input class="search-setting" type="radio" id="cheapest" name="cheapest-or-all" value="+cheapest:usd" checked="checked">
+					<label class="default active printings" for="cheapest">Lowest price</label>
+				</div>
+				<div class="box-and-label">
+					<input class="search-setting" type="radio" id="unique-prints" name="cheapest-or-all" value="+unique:prints">
+					<label class="printings" for="unique-prints">All printings</label>
+				</div>
+			</div>
+			<div class="search-section">
+				<span class="search-title">Sort by:</span> 
+				<div class="box-and-label">
+					<input class="sort-setting" type="radio" id="sort-cmc" name="sort" value="order=cmc&" checked="checked">
+					<label class="default sorting active" for="sort-cmc">Mana Value</label>
+				</div>
+				<div class="box-and-label">
+					<input class="sort-setting" type="radio" id="sort-name" name="sort" value="">
+					<label class="sorting" for="sort-name">Name</label>
+				</div>
+				<div class="box-and-label">
+					<input class="sort-setting" type="radio" id="sort-usd" name="sort" value="order=usd&dir=asc&">
+					<label class="sorting" for="sort-usd">Price</label>
+				</div>
+			</div>
+			<div class="search-section">
+				<button type="button" id="clear-button">Reset</button>
 			</div>
 		</div>
 		<div id="results"></div>
 		<div class="search-results"></div>
+		<div id="back-to-top"><a href="#title">^</a></div>
 	</main>
 	<footer>
 		&copy; Freddie Kaplan 2023
