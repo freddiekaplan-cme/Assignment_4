@@ -1,12 +1,12 @@
+main {
+	max-width: 550px;
+}
+
 .help-intro {
 	line-height: 1.5;
 	margin: 24px auto 0 auto;
-	width: 550px;
+	width: 100%;
 	text-align: left;
-}
-
-.scryfall-search {
-	max-width: 550px;
 }
 
 code {
@@ -14,17 +14,24 @@ code {
 }
 
 .grid-container {
+	align-items: baseline;
 	display: grid;
 	font-size: 14px;
 	font-weight: 200;
 	grid-template-columns: 40% 60%;
 	grid-template-rows: 1fr;
-	width: 550px;
+	
 }
 
 .grid-item {
 	margin: 0;
 	text-align: left;
+}
+
+.desktop-two-columns {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 1fr;
 }
 
 .help-title {
@@ -38,4 +45,14 @@ code {
 
 footer {
 	margin-top: 24px;
+}
+
+@media screen and (max-width: 400px) {
+	.desktop-two-columns {
+		grid-template-columns: 100%;
+	}
+
+	.underneath {
+		
+	}
 }
