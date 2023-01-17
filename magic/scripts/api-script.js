@@ -66,7 +66,7 @@ document.getElementById("clear-button").onclick = function() {
 		reset()
 	}, 250);
 
-	function reset() {
+function reset() {
 	$("#clear-button").removeClass("clicked-button");
 	document.getElementById("search-term").value = "";
 	$("input").prop("checked", false);
@@ -86,10 +86,10 @@ document.getElementById("clear-button").onclick = function() {
 
 function magic() {
 	$(".search-results").empty();
-	let oracleSearch = $("input[type='radio'][name='oracle-or-name']:checked").val();
 	let markedCheckbox = document.querySelectorAll('input[type="checkbox"]:checked');
-	let sortBy = $("input[type='radio'][name='sort']:checked").val();
-	let commanderId = document.getElementById("commander-id").value;
+	oracleSearch = $("input[type='radio'][name='oracle-or-name']:checked").val();
+	sortBy = $("input[type='radio'][name='sort']:checked").val();
+	commanderId = document.getElementById("commander-id").value;
 	searchOptions = $("input[type='radio'][name='cheapest-or-all']:checked").val();
 	for (let checkbox of markedCheckbox) {
 		searchOptions += checkbox.value;
@@ -141,11 +141,5 @@ function magic() {
 	});
 //end magic function
 }
-
-$("#nav").on("click", function() {
-	$(".menu").toggleClass("active");
-});
-
-
 //end jQuery
 })

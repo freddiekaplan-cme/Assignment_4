@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="stylesheet" href="./styles/how-to-search.css">
+	<link rel="stylesheet" href="../../assets/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="../../assets/fontawesome/css/solid.min.css">
+	<style> @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400;1,700&display=swap'); </style>
+	<script src="./scripts/jquery-3.6.2.min.js"></script>
+	<script defer src="./scripts/scripts.js"></script>
+	<title>🪙 $50 Commander: How to Search</title>
+</head>
+<body>
+	<header>
+		<nav id="nav"><i class="fa-solid fa-bars"></i></nav>
+		<h1 id="title"><span class="coin">🪙 </span>How to Search</h1>
+	</header>
+	<div class="menu">
+		<a class="menu-link" href="index.html"><div class="menu-item">Home</div></a>
+		<a class="menu-link" href="search-info.html"><div class="menu-item current">How to Search</div></a>
+		<a class="menu-link" href="list.html"><div class="menu-item">List</div></a>
+	</div>
+	<main>
+		<div class="help-intro">
+			<p>The search function have some default options marked with budget Commander builds in mind. A regular search should get you a result where you get cards with the words you put in the card text. The cards should be legal in Commander, be 	sorted by Mana Value and showing the lowest USD price for that card.</p>
+			<p>You are able to adjust your options and narrow down your results with the clickable options avaible to you, as well as sorting methods. For advanced searches, use the Scryfall syntax.</p>
+			<h2>Scryfall</h2>
+			<p>This site uses the <a href="https://www.scryfall.com">Scryfall</a> search syntax. You can use it by marking the <strong>Name&nbsp;/&nbsp;Scryfall</strong> option. Searching by name is the default for Scryfall but not this site.</p>
+			<p>A simple search uses colon followed by the search term but you can also use other inputs like >= (more than or equal to) and more. You can combine them to narrow down your search. Add a hyphen before something to exclude it from the search.</p>
+
+			<p><strong>Example:</strong></p>
+			<code>c:w t:enchantment cmc&lt;4 usd&lt;=1 -o:protection</code>
+			
+			<p>This will search for white enchantments with a mana value of less than 4, with a price less than or equal to 1 USD and that does not include "protection" in the card text.</p>
+		</div>
+		<div class="scryfall-search">
+			<h2>Common Methods</h2>
+			
+			<div class="grid-item help-title">Oracle (Card Text)</div>
+			<div class="grid-container">
+				<div class="grid-item">
+					<span class="search-header">Method</span>
+					<br>oracle/o
+				</div>
+				<div class="grid-item">
+					<span class="search-header">Example</span>
+					<br>o:token
+				</div>
+				<div class="grid-item">
+					<span class="search-header">Explanation</span>
+					<br>Cards with "token" in the text.
+				</div>
+			</div>
+
+		</div>
+
+
+	</main>
+	<footer>
+		&copy; Freddie Kaplan 2023
+	</footer>
+</body>
+</html>

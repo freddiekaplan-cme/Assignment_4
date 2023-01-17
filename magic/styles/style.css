@@ -63,9 +63,13 @@ h2 {
 }
 
 #nav {
+	align-items: center;
 	cursor: pointer;
+	display: flex;
+	height: 100%;
 	left: 24px;
 	position: absolute;
+	width: 48px;
 }
 
 .fa-bars {
@@ -73,7 +77,6 @@ h2 {
 }
 
 .menu {
-	/*display: none;*/
 	flex-direction: column;
 	left: 0;
 	position: absolute;
@@ -95,7 +98,6 @@ h2 {
 	font-size: 24px;
 	height: 100px;
 	justify-content: center;
-	z-index: 10;
 }
 
 .menu-item:hover {
@@ -103,6 +105,29 @@ h2 {
 	color: #fff;
 }
 
+a:link,
+a:active,
+a:visited {
+	color: var(--black);
+	font-weight: 700;
+}
+
+a:hover {
+	opacity: 0.6;
+}
+
+.menu-link,
+.menu-link a,
+.menu-link a:link,
+.menu-link a:active,
+.menu-link a:visited {
+	color: var(--black);
+	text-decoration: none;
+}
+
+.current {
+	background-color: #cd721c;
+}
 
 main {
 	display: -webkit-box;

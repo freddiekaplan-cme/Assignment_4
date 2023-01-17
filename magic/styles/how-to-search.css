@@ -1,0 +1,41 @@
+.help-intro {
+	line-height: 1.5;
+	margin: 24px auto 0 auto;
+	width: 550px;
+	text-align: left;
+}
+
+.scryfall-search {
+	max-width: 550px;
+}
+
+code {
+	font-size: 16px;
+}
+
+.grid-container {
+	display: grid;
+	font-size: 14px;
+	font-weight: 200;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: 1fr;
+	width: 550px;
+}
+
+.grid-item {
+	margin: 0;
+	text-align: left;
+}
+
+.help-title {
+	font-weight: 700;
+}
+
+.search-header {
+	font-style: italic;
+	text-decoration: underline;
+}
+
+footer {
+	margin-top: 24px;
+}
