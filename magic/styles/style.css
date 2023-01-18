@@ -53,6 +53,11 @@ h1 {
 	font-weight: 700;
 }
 
+h2 {
+	font-size: 20px;
+	margin: 24px auto 12px auto;
+}
+
 h1,
 h2 {
 	text-align: center;
@@ -77,16 +82,16 @@ h2 {
 }
 
 .menu {
-	flex-direction: column;
+	display: flex;
+	flex-direction: row;
 	left: 0;
 	position: absolute;
 	top: calc(0px - 10vh - 301px);
 	transition: top	0.5s;
-	width: 200px;
+	width: 100vw;
 }
 
 .menu.active {
-	display: flex;
 	top: 10vh;
 }
 
@@ -96,8 +101,14 @@ h2 {
 	display: flex;
 	background-color: var(--primary-color);
 	font-size: 24px;
+	flex-grow: 1;
 	height: 100px;
 	justify-content: center;
+	width: 15ch;
+}
+
+a.menu-link:hover {
+	opacity: 1;
 }
 
 .menu-item:hover {
@@ -122,6 +133,8 @@ a:hover {
 .menu-link a:active,
 .menu-link a:visited {
 	color: var(--black);
+	display: flex;
+	flex-grow: 1;
 	text-decoration: none;
 }
 
@@ -416,6 +429,9 @@ footer {
 }
 
 @media screen and (max-width: 620px) {
+	.menu {
+		flex-direction: column;
+	}
 
 	.menu-item {
 		width: 100vw;

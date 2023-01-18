@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
 	<script defer src="./scripts/scripts.js"></script>
 	<title>🪙 $50 Commander: How to Search</title>
 </head>
+
 <body>
 	<header>
 		<nav id="nav"><i class="fa-solid fa-bars"></i></nav>
@@ -23,46 +25,168 @@
 		<a class="menu-link" href="search-info.html"><div class="menu-item current">How to Search</div></a>
 		<a class="menu-link" href="list.html"><div class="menu-item">List</div></a>
 	</div>
-	<main>
-		<div class="help-intro">
-			<p>The search function have some default options marked with budget Commander builds in mind. A regular search should get you a result where you get cards with the words you put in the card text. The cards should be legal in Commander, be 	sorted by Mana Value and showing the lowest USD price for that card.</p>
-			<p>You are able to adjust your options and narrow down your results with the clickable options avaible to you, as well as sorting methods. For advanced searches, use the Scryfall syntax.</p>
-			<h2>Scryfall</h2>
-			<p>This site uses the <a href="https://www.scryfall.com">Scryfall</a> search syntax. You can use it by marking the <strong>Name&nbsp;/&nbsp;Scryfall</strong> option. Searching by name is the default for Scryfall but not this site.</p>
-			<p>A simple search uses colon followed by the search term but you can also use other inputs like >= (more than or equal to) and more. You can combine them to narrow down your search. Add a hyphen before something to exclude it from the search.</p>
-
-			<p><strong>Example:</strong></p>
-			<code>c:w t:enchantment cmc&lt;4 usd&lt;=1 -o:protection</code>
-			
-			<p>This will search for white enchantments with a mana value of less than 4, with a price less than or equal to 1 USD and that does not include "protection" in the card text.</p>
-		</div>
-		<div class="scryfall-search">
-			<h2>Common Methods</h2>
-
-			<div class="grid-item help-title">Oracle (Card Text)</div>
-			<div class="grid-container">
-				<div class="desktop-two-columns">
+	<div class="close-menu">
+		<main>
+			<div class="help-intro">
+				<p>The search function have some default options marked with budget Commander builds in mind. A regular search should get you a result where you get cards with the words you put in the card text. The cards should be legal in Commander, be 	sorted by Mana Value and showing the lowest USD price for that card.</p>
+				<p>You are able to adjust your options and narrow down your results with the clickable options avaible to you, as well as sorting methods. For advanced searches, use the Scryfall syntax.</p>
+				<h2>Scryfall</h2>
+				<p>This site uses the <a href="https://www.scryfall.com">Scryfall</a> search syntax. You can use it by marking the <strong>Name&nbsp;/&nbsp;Scryfall</strong> option. Searching by name is the default for Scryfall but not this site.</p>
+				<p>A simple search uses colon followed by the search term but you can also use other inputs like >= (more than or equal to) and more. You can combine them to narrow down your search. Add a hyphen before something to exclude it from the search.</p>
+				<p>For a complete list and explanations with more examples, check out <a href="https://scryfall.com/docs/syntax">Scryfall's excellent guide</a>.</p>
+				<p><strong>Example:</strong></p>
+				<code>c:w t:enchantment cmc&lt;4 usd&lt;=1 -o:protection</code>
+				<p>This will search for white enchantments with a mana value of less than 4, with a price less than or equal to 1 USD and that does not include "protection" in the card text.</p>
+			</div>
+			<section class="scryfall-search">
+				<h2>Common Methods</h2>
+				<div class="grid-container grid-headers">
 					<div class="grid-item">
 						<span class="search-header">Method</span>
+					</div>
+					<div class="grid-item">
+						<span class="search-header">Example</span>
+					</div>
+				</div>
+				<div class="grid-container first-item">
+					<div class="grid-item">
+						<span class="help-title">Oracle (Card Text)</span>
 						<br>oracle/o
 					</div>
-					<div class="grid-item underneath">
-						<span class="search-header">Example</span>
-						<br>o:token
+					<div class="grid-item">
+						<code>oracle:create o:"treasure token"</code>
+						<br>Cards with "create" and "treasure token" in the text. Note that you can put quotes " " around text with punctuation or spaces.
 					</div>
 				</div>
-				<div class="grid-item">
-					<span class="search-header">Explanation</span>
-					<br>Cards with "token" in the text.
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Color</span>
+						<br>color/c
+					</div>
+					<div class="grid-item">
+						<code>c>=uw -c:red</code>
+						<br>Cards that are at least white and blue, but not red.
+					</div>
 				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Mana Cost</span>
+						<br>mana/m
+					</div>
+					<div class="grid-item">
+						<code>m:{R}{G}</code>
+						<br>Cards with one red and one green mana.
+					</div>
+				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Mana Value</span>
+						<br>cmc
+					</div>
+					<div class="grid-item">
+						<code>cmc=3</code>
+						<br>Cards with Mana Value 3. You can also use colon but Scryfall prefers "=" here. ("CMC" is short for "Converted Mana Cost"). 
+					</div>
+				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Power, Toughness and Loyalty</span>
+						<br>power/pow, toughness/tou, loyalty/loy
+					</div>
+					<div class="grid-item">
+						<code>pow>=6</code>
+						<br>Cards with 6 or more power.
+					</div>
+				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Rarity</span>
+						<br>rarity/r
+					</div>
+					<div class="grid-item">
+						<code>r>=r</code>
+						<br>Cards at rare rarity or above.
+					</div>
+				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Set</span>
+						<br>set/s
+					</div>
+					<div class="grid-item">
+						<code>s:bro</code>
+						<br>Cards from The Brothers' War set.
+					</div>
+				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Format</span>
+						<br>format/f
+					</div>
+					<div class="grid-item">
+						<code>f:modern</code>
+						<br>Cards legal in the Modern format.
+					</div>
+				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Type</span>
+						<br>type/t
+					</div>
+					<div class="grid-item">
+						<code>t:creature</code>
+						<br>Cards that have the creature type.
+					</div>
+				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Prices</span>
+						<br>usd/eur/tix
+					</div>
+					<div class="grid-item">
+						<code>usd&lt;=0.5 s:war</code>
+						<br>Cards in the War of the Spark set where the USD price is equal to or less than 0.50 (tix = 1 MTGO Ticket).
+					</div>
+				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Language</span>
+						<br>language/lang
+					</div>
+					<div class="grid-item">
+						<code>lang:german</code>
+						<br>Cards in German.
+					</div>
+				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Shortcuts</span>
+						<br>is/not
+					</div>
+					<div class="grid-item">
+						<code>is:reprint not:vanilla s:jmp</code>
+						<br>Cards from the set Jumpstart that are reprints but aren't vanilla. Works for most established names, types and phrases like token, split, spell, permanent, reprint, fetchland, masterpiece, reserved, vanilla and more.
+					</div>
+				</div>
+				<div class="grid-container">
+					<div class="grid-item">
+						<span class="help-title">Include</span>
+						<br>include
+					</div>
+					<div class="grid-item">
+						<code>include:extras</code>
+						<br>Show absolutely every card when you search.
+					</div>
+				</div>
+			</section>
+			<div id="back-to-top">
+				<a href="#title"><i class="fa-solid fa-chevron-up"></i></a>
 			</div>
-
-		</div>
-
-
-	</main>
-	<footer>
-		&copy; Freddie Kaplan 2023
-	</footer>
+		</main>
+		<footer>
+			&copy; Freddie Kaplan 2023
+		</footer>
+	</div>
 </body>
+
 </html>
