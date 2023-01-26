@@ -6,19 +6,20 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./styles/style.css">
-	<link rel="stylesheet" href="../../assets/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="../../assets/fontawesome/css/solid.min.css">
+	<link rel="stylesheet" href="../assets/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="../assets/fontawesome/css/solid.min.css">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🪙</text></svg>">
 	<style> @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400;1,700&display=swap'); </style>
 	<script src="./scripts/jquery-3.6.2.min.js"></script>
 	<script defer src="./scripts/scripts.js"></script>
 	<script defer src="./scripts/api-script.js"></script>
-	<title>🪙 $50 Commander</title>
+	<title>$50 Commander</title>
 </head>
 
 <body>
 	<header>
 		<nav id="nav"><i class="fa-solid fa-bars"></i></nav>
-		<h1 id="title"><span class="coin">🪙 </span>$50 COMMANDER</h1>
+		<h1 id="title"><span class="coin">🪙 </span> $50 COMMANDER</h1>
 	</header>
 	<div class="menu">
 		<a class="menu-link" href="index.html"><div class="menu-item current">Home</div></a>
@@ -27,58 +28,115 @@
 	</div>
 	<div class="close-menu">
 		<main>
-			<div class="inputs">	
-				<div class="search-section">
-					<input type="text" placeholder="Search" id="search-term">
+			<div class="inputs">
+
+				<div class="search-fields search-section">
+					<input type="text" placeholder="flying hippo token" id="search-term">
 					<div id="search-to-string"></div>
-					<button type="button" id="search-button">Search</button>
+					<button type="button" id="search-button">Find</button>
+				</div>
+				
+				<div class="search-cmd-id desktop-search-row">
+					<div class="search-section">
+						<div class="box-and-label">
+							<span class="search-title">Search:</span>
+							<input class="search-setting" type="radio" id="search-oracle" name="oracle-or-name" value="o:" checked="checked">
+							<label class="default active search-oracle-or-name" for="search-oracle">Card Text</label>
+						</div>
+						<div class="box-and-label">
+							<input class="search-setting" type="radio" id="search-name" name="oracle-or-name" value="">
+							<label class="search-oracle-or-name" for="search-name">Name / Scryfall</label>
+						</div>
+					</div>
+					<div class="search-section">
+						<!--<label class="search-title" for="commander-id">Commander Identity:</label>-->
+						<span class="search-title">Commander Identity:</span>
+						<select name="commander-id" id="commander-id">
+							<option value="">Any</option>
+							<option value="+id%3C=w">⚪</option>
+							<option value="+id%3C=u">🔵</option>
+							<option value="+id%3C=b">⚫</option>
+							<option value="+id%3C=r">🔴</option>
+							<option value="+id%3C=g">🟢</option>
+							<option value="+id%3C=wu">⚪🔵</option>
+							<option value="+id%3C=wb">⚪⚫</option>
+							<option value="+id%3C=wr">⚪🔴</option>
+							<option value="+id%3C=wg">⚪🟢</option>
+							<option value="+id%3C=ub">🔵⚫</option>
+							<option value="+id%3C=ur">🔵🔴</option>
+							<option value="+id%3C=ug">🔵🟢</option>
+							<option value="+id%3C=br">⚫🔴</option>
+							<option value="+id%3C=bg">⚫🟢</option>
+							<option value="+id%3C=rg">🔴🟢</option>
+							<option value="+id%3C=wub">⚪🔵⚫</option>
+							<option value="+id%3C=wur">⚪🔵🔴</option>
+							<option value="+id%3C=wug">⚪🔵🟢</option>
+							<option value="+id%3C=ubr">🔵⚫🔴</option>
+							<option value="+id%3C=ubg">🔵⚫🟢</option>
+							<option value="+id%3C=brg">⚫🔴🟢</option>
+							<option value="+id%3C=wubr">⚪🔵⚫🔴</option>
+							<option value="+id%3C=wubg">⚪🔵⚫🟢</option>
+							<option value="+id%3C=wurg">⚪🔵🔴🟢</option>
+							<option value="+id%3C=wurg">⚪⚫🔴🟢</option>
+							<option value="+id%3C=ubrg">🔵⚫🔴🟢</option>
+						</select>
+					</div>
 				</div>
 
-				<div class="search-section">
-					<div class="box-and-label">
-						<span class="search-title">Search:</span>
-						<input class="search-setting" type="radio" id="search-oracle" name="oracle-or-name" value="o:" checked="checked">
-						<label class="default active search-oracle-or-name" for="search-oracle">Card Text</label>
-					</div>
-					<div class="box-and-label">
-						<input class="search-setting" type="radio" id="search-name" name="oracle-or-name" value="">
-						<label class="search-oracle-or-name" for="search-name">Name / Scryfall</label>
+				<div class="show-sort search-section">
+					<div class="desktop-search-row">
+						<div class="search-section">
+							<div class="box-and-label">
+								<span class="search-title">Show:</span>
+								<input class="search-setting" type="radio" id="cheapest" name="cheapest-or-all" value="+cheapest:usd" checked="checked">
+								<label class="default active printings" for="cheapest">Lowest Price</label>
+							</div>
+							<div class="box-and-label">
+								<input class="search-setting" type="radio" id="unique-prints" name="cheapest-or-all" value="+unique:prints">
+								<label class="printings" for="unique-prints">All Printings</label>
+							</div>
+						</div>
+						<div class="search-section">
+							<span class="search-title">Sort by:</span> 
+							<div class="box-and-label">
+								<input class="sort-setting" type="radio" id="sort-cmc" name="sort" value="order=cmc&" checked="checked">
+								<label class="default sorting active" for="sort-cmc">Mana Value</label>
+							</div>
+							<div class="box-and-label">
+								<input class="sort-setting" type="radio" id="sort-name" name="sort" value="">
+								<label class="sorting" for="sort-name">Name</label>
+							</div>
+							<div class="box-and-label">
+								<input class="sort-setting" type="radio" id="sort-usd" name="sort" value="order=usd&dir=asc&">
+								<label class="sorting" for="sort-usd">Price</label>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div class="search-section">
-					<label class="search-title" for="commander-id">Commander Identity:</label>
-					<select name="commander-id" id="commander-id">
-						<option value="">Any</option>
-						<option value="+id%3C=w">⚪</option>
-						<option value="+id%3C=u">🔵</option>
-						<option value="+id%3C=b">⚫</option>
-						<option value="+id%3C=r">🔴</option>
-						<option value="+id%3C=g">🟢</option>
-						<option value="+id%3C=wu">⚪🔵</option>
-						<option value="+id%3C=wb">⚪⚫</option>
-						<option value="+id%3C=wr">⚪🔴</option>
-						<option value="+id%3C=wg">⚪🟢</option>
-						<option value="+id%3C=ub">🔵⚫</option>
-						<option value="+id%3C=ur">🔵🔴</option>
-						<option value="+id%3C=ug">🔵🟢</option>
-						<option value="+id%3C=br">⚫🔴</option>
-						<option value="+id%3C=bg">⚫🟢</option>
-						<option value="+id%3C=rg">🔴🟢</option>
-						<option value="+id%3C=wub">⚪🔵⚫</option>
-						<option value="+id%3C=wur">⚪🔵🔴</option>
-						<option value="+id%3C=wug">⚪🔵🟢</option>
-						<option value="+id%3C=ubr">🔵⚫🔴</option>
-						<option value="+id%3C=ubg">🔵⚫🟢</option>
-						<option value="+id%3C=brg">⚫🔴🟢</option>
-						<option value="+id%3C=wubr">⚪🔵⚫🔴</option>
-						<option value="+id%3C=wubg">⚪🔵⚫🟢</option>
-						<option value="+id%3C=wurg">⚪🔵🔴🟢</option>
-						<option value="+id%3C=wurg">⚪⚫🔴🟢</option>
-						<option value="+id%3C=ubrg">🔵⚫🔴🟢</option>
-					</select>
+				<div class="rarity search-section">
+					<div class="box-and-label">
+						<span class="search-title">Rarity:</span>	
+						<input class="search-setting" type="checkbox" id="mythic" name="mythic" value="+t%3Amythic">
+						<label for="mythic">Mythic Rare</label>
+					</div>
+					<div class="box-and-label">
+						<input class="search-setting" type="checkbox" id="rare" name="rare" value="+t%3Arare">
+						<label for="rare">Rare</label>
+					</div>
+					<div class="box-and-label">
+						<input class="search-setting" type="checkbox" id="uncommon" name="uncommon" value="+t%3Auncommon">
+						<label for="uncommon">Uncommon</label>
+					</div>
+					<div class="box-and-label">
+						<input class="search-setting" type="checkbox" id="common" name="common" value="+t%3Acommon">
+						<label for="common">Common</label>
+					</div>
 				</div>
-				<div class="search-section">
+				
+				<div class="types search-section">
+					<span class="search-title">Looking For:</span>
+
 					<div class="box-and-label">
 						<input class="search-setting" type="checkbox" id="commander-legal" name="commander-legal" value="+f%3Acommander" checked="checked">
 						<label class="default active" for="commander-legal">Legal in Commander</label>
@@ -90,6 +148,10 @@
 					<div class="box-and-label">
 						<input class="search-setting" type="checkbox" id="creature" name="creature" value="+t%3Acreature">
 						<label for="creature">Creature</label>
+					</div>
+					<div class="box-and-label">
+						<input class="search-setting" type="checkbox" id="planeswalker" name="planeswalker" value="+t%3Aplaneswalker">
+						<label for="planeswalker">Planeswalker</label>
 					</div>
 					<div class="box-and-label">	
 						<input class="search-setting" type="checkbox" id="instant" name="instant" value="+t%3Ainstant">
@@ -108,8 +170,8 @@
 						<label for="aura">Aura</label>
 					</div>
 					<div class="box-and-label">
-						<input class="search-setting" type="checkbox" id="planeswalker" name="planeswalker" value="+t%3Aplaneswalker">
-						<label for="planeswalker">Planeswalker</label>
+						<input class="search-setting" type="checkbox" id="battle" name="battle" value="+t%3Abattle">
+						<label for="battle">Battle</label>
 					</div>
 					<div class="box-and-label">
 						<input class="search-setting" type="checkbox" id="artifact" name="artifact" value="+t%3Aartifact">
@@ -120,58 +182,44 @@
 						<label for="land">Land</label>
 					</div>
 				</div>
-				<div class="search-section">
+
+				<div class="colors search-section">
 					<div class="box-and-label">
-						<input class="search-setting search-color" type="checkbox" id="white" name="white" value="+c%3Aredwhite">
-						<label class="no-checkbox" for="white">⚪</label>
+						<div class="marked-color">
+							<input class="search-setting search-color" type="checkbox" id="white" name="white" value="+c%3Aredwhite">
+							<label class="no-checkbox" for="white">⚪</label>
+						</div>
 					</div>
 					<div class="box-and-label">
-						<input class="search-setting search-color" type="checkbox" id="blue" name="blue" value="+c%3Ablue">
-						<label class="no-checkbox" for="blue">🔵</label>
+						<div class="marked-color">
+							<input class="search-setting search-color" type="checkbox" id="blue" name="blue" value="+c%3Ablue">
+							<label class="no-checkbox" for="blue">🔵</label>
+						</div>
 					</div>
 					<div class="box-and-label">
-						<input class="search-setting search-color" type="checkbox" id="black" name="black" value="+c%3Ablack">
-						<label class="no-checkbox" for="black">⚫</label>
+						<div class="marked-color">
+							<input class="search-setting search-color" type="checkbox" id="black" name="black" value="+c%3Ablack">
+							<label class="no-checkbox" for="black">⚫</label>
+						</div>
 					</div>
 					<div class="box-and-label">
-						<input class="search-setting search-color" type="checkbox" id="red" name="red" value="+c%3Ared">
-						<label class="no-checkbox" for="red">🔴</label>
+						<div class="marked-color">
+							<input class="search-setting search-color" type="checkbox" id="red" name="red" value="+c%3Ared">
+							<label class="no-checkbox" for="red">🔴</label>
+						</div>
 					</div>
 					<div class="box-and-label">
-						<input class="search-setting search-color" type="checkbox" id="green" name="green" value="+c%3Agreen">
-						<label class="no-checkbox" for="green">🟢</label>
+						<div class="marked-color">
+							<input class="search-setting search-color" type="checkbox" id="green" name="green" value="+c%3Agreen">
+							<label class="no-checkbox" for="green">🟢</label>
+						</div>
 					</div>
 					<div class="box-and-label">
 						<input class="search-setting" type="checkbox" id="colorless" name="colorless" value="+c%3Acolorless">
 						<label for="colorless">Colorless</label>
 					</div>
-				</div>
-				<div class="search-section">
-					<div class="box-and-label">
-						<span class="search-title">Show:</span>
-						<input class="search-setting" type="radio" id="cheapest" name="cheapest-or-all" value="+cheapest:usd" checked="checked">
-						<label class="default active printings" for="cheapest">Lowest Price</label>
-					</div>
-					<div class="box-and-label">
-						<input class="search-setting" type="radio" id="unique-prints" name="cheapest-or-all" value="+unique:prints">
-						<label class="printings" for="unique-prints">All Printings</label>
-					</div>
-				</div>
-				<div class="search-section">
-					<span class="search-title">Sort by:</span> 
-					<div class="box-and-label">
-						<input class="sort-setting" type="radio" id="sort-cmc" name="sort" value="order=cmc&" checked="checked">
-						<label class="default sorting active" for="sort-cmc">Mana Value</label>
-					</div>
-					<div class="box-and-label">
-						<input class="sort-setting" type="radio" id="sort-name" name="sort" value="">
-						<label class="sorting" for="sort-name">Name</label>
-					</div>
-					<div class="box-and-label">
-						<input class="sort-setting" type="radio" id="sort-usd" name="sort" value="order=usd&dir=asc&">
-						<label class="sorting" for="sort-usd">Price</label>
-					</div>
-				</div>
+				</div>	
+
 				<div class="search-section">
 					<button type="button" id="clear-button">Reset</button>
 				</div>

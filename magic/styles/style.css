@@ -8,6 +8,7 @@
 html {
 	background-color: var(--white);
 	height: 100vh;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -164,7 +165,15 @@ main {
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 	margin: 24px auto 0 auto;
-	max-width: 280px;
+	max-width: 550px;
+}
+
+.desktop-search-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin: 0;
 }
 
 .search-section {
@@ -180,7 +189,7 @@ main {
 	        flex-direction: row;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
-	margin: 6px 0 0 0;
+	margin: 4px 0;
 }
 
 label,
@@ -197,6 +206,7 @@ button {
 .clicked-button {
 	-webkit-box-shadow: none;
 	        box-shadow: none;
+	cursor: wait;
 }
 
 #commander-id,
@@ -213,6 +223,15 @@ button {
 	font-family: inherit;
 	height: 32px;
 	margin-bottom: 6px;
+}
+
+.cmd-id,
+#commander-id {
+	margin: 0;
+}
+
+#search-term {
+	font-size: 16px;
 }
 
 button#search-button,
@@ -262,30 +281,51 @@ input[type=text] {
 }
 
 input[type="radio"],
-input[type="checkbox"] {
+input[type="checkbox"],
+.card-name-copy,
+img.hidden {
 	display: none;
+}
+
+label.active {
+	-webkit-text-decoration: underline;
+	text-decoration: underline;
+	-webkit-text-decoration-style: double;
+	text-decoration-style: double;
+	-webkit-text-decoration-color: var(--primary-color);
+	text-decoration-color: var(--primary-color);
 }
 
 label.no-checkbox {
 	border-radius: 11px;
 	font-size: 16px;
 	padding-bottom: 1px;
-}
-
-label.active {
-	-webkit-text-decoration: underline;
-	        text-decoration: underline;
-
-	-webkit-text-decoration-style: double;
-			text-decoration-style: double;
-	-webkit-text-decoration-color: var(--primary-color);
-			text-decoration-color: var(--primary-color);
-}
-
-label.no-checkbox.active {
-	-webkit-box-shadow: 0 0 0 2px var(--primary-color);
-	        box-shadow: 0 0 0 2px var(--primary-color);
 	text-decoration: none;
+}
+
+.marked-color {
+	margin: 0 12px 0 0;
+}
+
+.marked-color > label.no-checkbox {
+	align-items: center;
+	border-color: var(--white);
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 2px;
+	display: flex;
+	height: 2.5ch;
+	justify-content: center;
+	margin-right: 12px;
+	width: 2.5ch;
+}
+
+.marked-color > label.no-checkbox.active {
+	border-color: var(--primary-color);
+}
+
+.marked-color > label.no-checkbox {
+	margin: 0 auto;
 }
 
 select#commander-id {
@@ -299,9 +339,10 @@ select#commander-id {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	height: 32px;
 	-ms-flex-wrap: nowrap;
 	    flex-wrap: nowrap;
-	margin: 6px 0 6px 0;
+	margin: 0;
 }
 
 .box-and-label label {
@@ -347,7 +388,7 @@ main div {
 	-webkit-box-pack: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	margin: 12px 0 0 0;
+	padding: 32px 0 0 0;
 }
 
 .search-results {
@@ -372,10 +413,6 @@ main div {
 	margin: 0 6px 0 6px;
 }
 
-img.hidden {
-	display: none;
-}
-
 .turn-card-over {
 	background-color: inherit;
 	border: none;
@@ -390,6 +427,11 @@ img.hidden {
 
 .card-image {
 	font-weight: 700;
+}
+
+.clipboard-emoji {
+	display: inline-block;
+	width: 2ch;
 }
 
 #back-to-top a,
@@ -437,13 +479,25 @@ footer {
 		width: 100vw;
 	}
 	
+	.inputs {
+		max-width: 280px;
+	}
+
+	.search-section {
+		margin: 4px 0 0 0;
+	}
+
 	#search-term {
 		width: calc(100% - 20vw - 6px);
 	}
 
 	#search-button {
 		margin-right: 0;
-		width: 20vw;
+		width: 14vw;
+	}
+
+	.desktop-search-row {
+		gap: 0;
 	}
 
 	#back-to-top a,
