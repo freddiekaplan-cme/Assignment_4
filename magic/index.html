@@ -24,7 +24,8 @@
 	<div class="menu">
 		<a class="menu-link" href="index.html"><div class="menu-item current">Home</div></a>
 		<a class="menu-link" href="search-info.html"><div class="menu-item">How to Search</div></a>
-		<a class="menu-link" href="list.html"><div class="menu-item">List</div></a>
+	<div class="menu-item" id="show-list-from-nav">Large List</div>
+
 	</div>
 	<div class="close-menu">
 		<main>
@@ -219,11 +220,23 @@
 						<label for="colorless">Colorless</label>
 					</div>
 				</div>	
-
-				<div class="search-section">
+				<div class="search-section button-section">
 					<button type="button" id="clear-button">Reset</button>
+					<button type="button" id="list-button">List 📋</button>
 				</div>
 			</div>
+
+			<div id="the-list-container">
+				<div class="list-clear-container">
+					<button class="list-control-button" id="list-control-clear">Clear 🗑️</button>
+				</div>
+				<textarea id="the-list"></textarea>
+				<div class="list-control">
+					<button class="list-control-button" id="list-control-copy">Copy</button>
+					<button class="list-control-button" id="list-control-hide">Hide</button>
+				</div>
+			</div>
+			
 			<div id="results"></div>
 			<div class="search-results"></div>
 			<div id="back-to-top">
