@@ -126,6 +126,10 @@ h2 {
 	width: 15ch;
 }
 
+.large-list-in-menu {
+	font-weight: 700;
+}
+
 a.menu-link:hover {
 	opacity: 1;
 }
@@ -387,6 +391,7 @@ button#list-control-clear:hover {
 	opacity: 1;
 }
 
+#visible-list,
 textarea {
 	background-color: var(--secondary-color);
 	border: 0;
@@ -564,7 +569,7 @@ main div {
 
 .copy-to-list,
 .copy-card-name {
-	cursor: pointer;;
+	cursor: pointer;
 	display: inline-block;
 	width: 9ch;
 }
