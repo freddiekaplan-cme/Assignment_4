@@ -43,15 +43,17 @@ $("label").click(function(event) {
 	if ($(this).hasClass("sorting")) {
 		$(".sorting").removeClass("active");
 		$(this).toggleClass("active");
-	};
-	if ($(this).hasClass("printings")) {
+	}
+	else if ($(this).hasClass("printings")) {
 		$(".printings").removeClass("active");
 		$(this).toggleClass("active");
-	};
-	if ($(this).hasClass("search-oracle-or-name")) {
+	}
+	else if ($(this).hasClass("search-oracle-or-name")) {
 		$(".search-oracle-or-name").removeClass("active");
+		$(this).toggleClass("active");
+	} else {
+		$(this).toggleClass("active");
 	};
-	$(this).toggleClass("active");
 	event.stopPropagation();
 });
 
